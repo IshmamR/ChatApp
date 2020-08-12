@@ -23,9 +23,41 @@
 			"message": message
 		});
 
+		if(message == 'who is gay?')
+		{
+			setTimeout(function()
+			{
+				$(".modal").show();
+			}, 5000);
+		}
+		turnOnLighting();
+
 		document.querySelector("#message").value = ""; // Removing text from the input box
 
 		return false;
+	}
+
+	function turnOnLighting()
+	{
+		turnRed();
+		setTimeout(function()
+		{
+			turnBlue();
+			setTimeout(function()
+			{
+				turnOnLighting();	
+			}, 400);
+		}, 400);
+	}
+
+	function turnBlue()
+	{
+		$('.modal').css('background', 'blue');
+	}
+
+	function turnRed()
+	{
+		$('.modal').css("background", "red");
 	}
 
 	firebase.database().ref("messages").on("child_added", function (snapshot) {
