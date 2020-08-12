@@ -1,0 +1,95 @@
+html {
+	overflow: hidden;
+}
+body {
+	background-color:#123456;
+	min-height: 100%;
+	font-family: arial, sans-serif;
+}
+div{
+	
+}
+.main {
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	height:80%;
+	width:60%;
+	background-color:#EAEAEA;
+}
+.main div {
+	background-color:#eaeaea;
+}
+
+.head {
+	padding:10px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	max-height:10%;
+}
+
+.links span {
+	float:right;
+}
+.hide, #link {
+	display:none;
+}
+.show {
+	
+}
+
+.bod {
+	height:80%;
+	overflow:auto;
+}
+
+.bod ul {
+	padding:0px 5px;
+}
+.bod ul li {
+	list-style:none;
+	display:block;
+	margin:7px 3px;
+}
+
+.other {
+	text-align:left;
+}
+.self {
+	text-align:right;
+}
+
+.sender {
+	padding:10px;
+	max-height:10%;
+	display:flex;
+	justify-content:center;
+}
+
+
+.sender form {
+	width: 100%;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+}
+.sender input {
+	margin-right:0.5rem;
+	border-radius:5px;
+	min-width: 70%;
+	height: 2rem;
+}
+
+.sender button {
+	padding: 10px;
+}
+
+
+
+@media only screen and (max-width: 750px) {
+	.main {
+		width: 85%;
+	}
+}
