@@ -1,13 +1,16 @@
 html {
-	overflow: hidden;
+	overflow-x: hidden;
 }
 body {
-	background-color:#123456;
-	min-height: 100%;
+	min-height: 100vh;
 	font-family: arial, sans-serif;
 }
 div{
 	
+}
+.hero {
+	position: relative;
+	min-height: 90vh;
 }
 .main {
 	position:absolute;
@@ -16,10 +19,6 @@ div{
 	transform:translate(-50%,-50%);
 	height:80%;
 	width:60%;
-	background-color:#EAEAEA;
-}
-.main div {
-	background-color:#eaeaea;
 }
 
 .head {
@@ -51,7 +50,7 @@ div{
 .bod ul li {
 	list-style:none;
 	display:block;
-	margin:7px 3px;
+	margin:2px 3px;
 }
 
 .other {
@@ -75,18 +74,17 @@ div{
 	display: flex;
 	justify-content: center;
 }
-.sender input {
+#message {
 	margin-right:0.5rem;
-	border-radius:5px;
 	min-width: 70%;
 	height: 2rem;
+	border: 1px solid #5bc0de;
 }
-
-.sender button {
-	padding: 10px;
+#message:focus {
+	outline: none;
+	border: none;
+	border-bottom: 1px solid #0275d8;
 }
-
-
 
 @media only screen and (max-width: 750px) {
 	.main {
@@ -96,7 +94,3 @@ div{
 
 
 /* ----- */
-.logo
-{
-	background-color: #444;
-}

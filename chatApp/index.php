@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width initial-scale=1.0">
-	<title>ChatApp</title>
+	<title>ChatApp - login</title>
 	<script src="https://kit.fontawesome.com/b3a4cf9dc1.js" crossorigin="anonymous"></script>
 	<style type="text/css">
 		body {

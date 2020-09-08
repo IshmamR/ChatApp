@@ -13,7 +13,7 @@
 
 	////////////////////////////////////////////
 	var myName = localStorage.getItem("user");
-	console.log(myName);
+	// console.log(myName);
 
 	function sendMsg() {
 		
@@ -26,6 +26,8 @@
 
 		document.querySelector("#message").value = ""; // Removing text from the input box
 
+		setTimeout(scrolled, 100);
+		
 		return false;
 	}
 
