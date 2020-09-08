@@ -1,3 +1,13 @@
+<?php
+	session_start();
+	// $_SESSION['user'] = 'name';
+	if(isset($_POST['submit'])) {
+		$_SESSION['user'] = $_POST['username'];
+	}
+	if (!isset($_SESSION['user']) || !isset($_POST['submit'])) {
+		header('Location: index.php');
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 		<head>
@@ -10,8 +20,11 @@
 			<link rel="stylesheet" type="text/css" href="main.css">
 		</head>
 		<body>
+			<div class="text-center text-light container-fluid pt-3">
+				<h4>Logged in as <?php echo($_SESSION['user']); ?></h4>
+			</div>
 				<div class="main">
-						<div class="head">
+						<div class="head shadow">
 								<div class="logo">
 										<span>ChatApp</span>
 								</div>
@@ -69,5 +82,12 @@
 		 		https://firebase.google.com/docs/web/setup#available-libraries -->
 		 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 				<script src="main.js"></script>
+				<script type="text/javascript">
+					function scrolled() {
+						var items = document.querySelector("#messages");
+						items.scrollIntoView(false);
+					}
+					setTimeout(scrolled, 2000);
+				</script>
 		</body>
 </html>

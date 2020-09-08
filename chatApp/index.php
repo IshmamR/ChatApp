@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,7 +50,7 @@
 		<form action="main.php" onsubmit="submitted()" method="post">
 			<h2>Enter your name:</h2>
 			<input id="username" type="text" name="username" autocomplete="off">
-			<button id="enter" type="submit">Enter</button>
+			<button id="enter" type="submit" name="submit">Enter</button>
 		</form>
 	</div>
 	<script type="text/javascript">
@@ -59,7 +60,6 @@
 			// sending username in session storage(so the user is kept logged in even after reloading)
 			sessionStorage.setItem("user", name); 
 		}
-		//
 	</script>
 </body>
 </html>
