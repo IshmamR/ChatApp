@@ -1,9 +1,9 @@
 <?php
-	session_start();
+	// session_start();
 	// $_SESSION['user'] = 'name';
-	if(isset($_POST['submit'])) {
-		$_SESSION['user'] = $_POST['username'];
-	}
+	// if(isset($_POST['submit'])) {
+	// 	$_SESSION['user'] = $_POST['username'];
+	// }
 	// if (!isset($_SESSION['user']) || !isset($_POST['submit'])) {
 	// 	header('Location: index.php');
 	// }
@@ -18,6 +18,12 @@
 
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 			<link rel="stylesheet" type="text/css" href="main.css">
+			<!-- To check user before dom load -->
+			<script type="text/javascript">
+				if (localStorage.getItem('user') === null) {
+					window.location.replace('index.php');
+				}
+			</script>
 		</head>
 		<body class="bg-primary">
 			<div class="text-center text-light container-fluid pt-3">
@@ -85,6 +91,10 @@
 					window.onload = (event) => {
 						// console.log('page is fully loaded');
 						setTimeout(scrolled, 5000);
+						// To check user after DOM load
+						if (localStorage.getItem('user') === null) {
+							window.location.replace('index.php');
+						}
 					};
 				</script>
 		</body>

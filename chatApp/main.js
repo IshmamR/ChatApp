@@ -16,7 +16,6 @@
 	// console.log(myName);
 
 	function sendMsg() {
-		
 		var message = document.querySelector("#message").value;
 
 		firebase.database().ref("messages").push().set({
