@@ -4,9 +4,9 @@
 	if(isset($_POST['submit'])) {
 		$_SESSION['user'] = $_POST['username'];
 	}
-	if (!isset($_SESSION['user']) || !isset($_POST['submit'])) {
-		header('Location: index.php');
-	}
+	// if (!isset($_SESSION['user']) || !isset($_POST['submit'])) {
+	// 	header('Location: index.php');
+	// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +21,7 @@
 		</head>
 		<body>
 			<div class="text-center text-light container-fluid pt-3">
-				<h4>Logged in as <?php echo($_SESSION['user']); ?></h4>
+				<h4>Logged in as <script>document.write(localStorage.getItem('user'));</script> </h4>
 			</div>
 				<div class="main">
 						<div class="head shadow">
@@ -87,7 +87,7 @@
 						var items = document.querySelector("#messages");
 						items.scrollIntoView(false);
 					}
-					setTimeout(scrolled, 2000);
+					setInterval(scrolled, 5000);
 				</script>
 		</body>
 </html>

@@ -58,7 +58,7 @@
 		function submitted () {
 			var name = document.querySelector("#username").value;
 			// sending username in session storage(so the user is kept logged in even after reloading)
-			sessionStorage.setItem("user", name); 
+			localStorage.setItem("user", name); 
 		}
 	</script>
 </body>
